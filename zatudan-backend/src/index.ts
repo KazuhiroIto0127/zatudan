@@ -1,7 +1,8 @@
 import { Hono } from 'hono'
+import { zatudan } from './zatudan/api'
 
 const app = new Hono()
 
-app.get('/', (c) => c.text('Hello Hono test3!'))
+app.route('/api/zatudan', zatudan)
 
 export default app
