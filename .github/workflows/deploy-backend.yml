@@ -1,0 +1,29 @@
+name: Deploy Backend
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'zatudan-backend/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy Backend
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Bun
+        run: |
+          curl -fsSL https://bun.sh/install | bash
+
+      - name: Set up Bun path
+        run: echo "$HOME/.bun/bin" >> $GITHUB_PATH
+
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          environment: 'production'
+          workingDirectory: './zatudan-backend'
