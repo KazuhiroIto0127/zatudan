@@ -1,0 +1,33 @@
+name: Deploy Frontend
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'zatudan-frontend/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy Backend
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Bun
+        run: |
+          curl -fsSL https://bun.sh/install | bash
+
+      - name: Set up Bun path
+        run: echo "$HOME/.bun/bin" >> $GITHUB_PATH
+
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@1
+        with:
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          projectName: "zatudan-frontend"
+          directory: "./build"
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          workingDirectory: './zatudan-frontend'
+
