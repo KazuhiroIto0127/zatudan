@@ -29,7 +29,7 @@ jobs:
         working-directory: ./zatudan-frontend
 
       - name: Build the project
-        run: bun build
+        run: bun run build
         working-directory: ./zatudan-frontend
 
       - name: Publish to Cloudflare Pages
