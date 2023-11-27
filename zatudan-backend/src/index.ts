@@ -6,7 +6,7 @@ const app = new Hono()
 app.use(
   '/api/*',
   cors({
-    origin: ['https://zatudan-backend.kazuhiroito0127.workers.dev', 'http://localhost:3001'],
+    origin: ['https://zatudan-frontend.pages.dev', 'http://localhost:3001'],
     allowHeaders: ['X-Custom-Header', 'Upgrade-Insecure-Requests', 'Content-Type'],
     allowMethods: ['POST', 'GET', 'OPTIONS'],
     exposeHeaders: ['Content-Length', 'X-Kuma-Revision'],
