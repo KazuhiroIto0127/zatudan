@@ -13,7 +13,7 @@ compatibility_date = "2023-01-01"
 # binding = "MY_BUCKET"
 # bucket_name = "my-bucket"
 
-# [[d1_databases]]
-# binding = "DB"
-# database_name = "my-database"
-# database_id = ""
+[[d1_databases]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "zatudan"
+database_id = "4a616a31-c084-4b56-b1e0-f825b97c43f9"
