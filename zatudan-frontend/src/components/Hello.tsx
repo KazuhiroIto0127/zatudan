@@ -4,7 +4,7 @@ export default function Hello(){
   const handleClick = async () => {
     try{
       const apiUrl = "https://zatudan-backend.kazuhiroito0127.workers.dev";
-      const url = `${apiUrl}/api/zatudan`;
+      const url = `${apiUrl}/api/topics/random`;
       const response = await fetch(url);
       const data = await response.json();
       alert(JSON.stringify(data));

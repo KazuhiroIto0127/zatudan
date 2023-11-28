@@ -1,6 +1,6 @@
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
-import { zatudan } from './zatudan/api'
+import { topics } from './topics/api'
 
 const app = new Hono()
 app.use(
@@ -15,6 +15,6 @@ app.use(
   })
 )
 
-app.route('/api/zatudan', zatudan)
+app.route('/api/topics', topics)
 
 export default app
