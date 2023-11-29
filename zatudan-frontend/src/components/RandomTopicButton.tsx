@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Hello(){
+export default function RandomTopicButton(){
   const [text, setText] = useState(""); // 新しいstateを追加
 
   const handleClick = async () => {

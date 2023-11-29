@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Hello from './components/Hello';
+import RandomTopicButton from './components/RandomTopicButton';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
     <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-50">
-      <Hello />
+      <RandomTopicButton />
     </div>
   </React.StrictMode>
 );
