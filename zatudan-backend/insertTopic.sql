@@ -1,0 +1,16 @@
+INSERT INTO topics (id, body) VALUES (16, '好きな音楽やアーティスト');
+INSERT INTO topics (id, body) VALUES (15, '好きな動物について');
+INSERT INTO topics (id, body) VALUES (14, '好きなスポーツやチーム');
+INSERT INTO topics (id, body) VALUES (13, '好きな食べ物やレストラン');
+INSERT INTO topics (id, body) VALUES (12, '旅行で行きたい場所や行ったことのある場所');
+INSERT INTO topics (id, body) VALUES (11, '一番影響を受けた人物');
+INSERT INTO topics (id, body) VALUES (10, '最近の健康や運動に関する取り組み');
+INSERT INTO topics (id, body) VALUES (9, '学生時代のお気に入りの科目');
+INSERT INTO topics (id, body) VALUES (8, 'お気に入りのカフェや休憩スポット');
+INSERT INTO topics (id, body) VALUES (7, '将来やりたいことや夢');
+INSERT INTO topics (id, body) VALUES (6, '週末のリラックス方法');
+INSERT INTO topics (id, body) VALUES (5, 'おすすめのアプリやガジェット');
+INSERT INTO topics (id, body) VALUES (4, 'おすすめの書籍/映画');
+INSERT INTO topics (id, body) VALUES (3, '最近気になったニュース');
+INSERT INTO topics (id, body) VALUES (2, '最近買ったもの');
+INSERT INTO topics (id, body) VALUES (1, '最近のマイブーム');

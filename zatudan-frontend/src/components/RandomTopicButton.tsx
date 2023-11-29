@@ -24,10 +24,12 @@ export default function RandomTopicButton(){
   }
 
   return (
-    <div className="container mb-16 flex justify-center flex-col">
-      <div className="w-full px-4 mb-10">
-        {text && <div className="text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 text-9xl">{text}</div>}
-      </div>
+    <div className="container py-16 flex justify-center flex-col">
+      {text &&
+        <div className="w-full px-4 my-10 py-10">
+          <div className="text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 text-9xl">{text}</div>
+        </div>
+      }
 
       <div className="flex justify-center">
         <button type="button"
