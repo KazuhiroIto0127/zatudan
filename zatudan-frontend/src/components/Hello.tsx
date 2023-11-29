@@ -5,7 +5,7 @@ export default function Hello(){
 
   const handleClick = async () => {
     try{
-      const apiUrl = "https://zatudan-backend.kazuhiroito0127.workers.dev";
+      const apiUrl = process.env.REACT_APP_CF_BACKEND_API_URL;
       const url = `${apiUrl}/api/topics/random`;
       const response = await fetch(url);
       const data = await response.json();
@@ -22,11 +22,16 @@ export default function Hello(){
 
   return (
     <>
-      <button onClick={handleClick}
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        話題を引く
-      </button>
-      {text && <p>{text}</p>}
+      <div className="mb-4">
+        <button onClick={handleClick}
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          話題を引く
+        </button>
+      </div>
+
+      <div className="w-full max-w-3xl px-4">
+        {text && <div className="mt-4 text-center text-gray-700 text-lg">{text}</div>}
+      </div>
     </>
   )
 }
