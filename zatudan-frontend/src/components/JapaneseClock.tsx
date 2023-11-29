@@ -32,7 +32,7 @@ const JapaneseClock = () => {
     }, []);
 
     return (
-      <div>
+      <div className='flex flex-wrap justify-between items-center'>
         <p>{date} <span>{time}</span></p>
       </div>
     );
