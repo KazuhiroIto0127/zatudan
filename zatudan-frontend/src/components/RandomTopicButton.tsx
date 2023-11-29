@@ -2,8 +2,10 @@ import React, { useState } from "react";
 
 export default function RandomTopicButton(){
   const [text, setText] = useState(""); // 新しいstateを追加
+  const [isLoading, setIsLoading] = useState(false); // ローディング状態のstate
 
   const handleClick = async () => {
+    setIsLoading(true);
     try{
       const apiUrl = process.env.REACT_APP_CF_BACKEND_API_URL;
       const url = `${apiUrl}/api/topics/random`;
@@ -18,19 +20,21 @@ export default function RandomTopicButton(){
         alert('予期せぬエラーが発生しました');
       }
     }
+    setIsLoading(false);
   }
 
   return (
     <div className="container mb-16 flex justify-center flex-col">
-      <div className="mb-4 mb-4 flex justify-center">
-        <button onClick={handleClick}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          話題を引く!!
-        </button>
+      <div className="w-full px-4 mb-10">
+        {text && <div className="text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 text-9xl">{text}</div>}
       </div>
 
-      <div className="w-full px-4">
-        {text && <div className="text-center text-gray-700 text-9xl">{text}</div>}
+      <div className="flex justify-center">
+        <button type="button"
+                disabled={isLoading}
+                onClick={handleClick} className="py-2.5 px-10 me-2 mb-2 font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
+          {isLoading ? '読み込み中...' : '話題を引く 👻'}
+        </button>
       </div>
     </div>
   )
