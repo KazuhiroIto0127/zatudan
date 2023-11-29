@@ -19,7 +19,6 @@ const TopicList = () => {
           throw new Error('データの取得に失敗しました。');
         }
         const data = await response.json();
-        console.log(data);
         setTopics(data);
       } catch (error) {
         console.error('エラー:', error);

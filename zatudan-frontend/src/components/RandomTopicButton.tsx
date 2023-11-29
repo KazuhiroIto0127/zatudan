@@ -29,7 +29,7 @@ export default function RandomTopicButton(){
   return (
     <div className="container py-16 flex justify-center flex-col">
       {text &&
-        <div className={`w-full px-4 my-10 py-10 ${animate ? 'animate-scale-in-center' : ''}`}>
+        <div style={{ wordBreak: ('auto-phrase' as any) }} className={`w-full px-4 my-10 py-10 ${animate ? 'animate-scale-in-center' : ''}`}>
           <div className="text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 text-9xl">{text}</div>
         </div>
       }
