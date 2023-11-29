@@ -26,6 +26,11 @@ export default function RandomTopicButton(){
     setIsLoading(false);
   }
 
+  // 使用する絵文字のリスト
+  const emojis = ["👻", "😃", "👐", "👀", "🙌", "🐶", "🐹", "🤣", "⭐️", "⚽️"];
+  const getRandomEmoji = () => emojis[Math.floor(Math.random() * emojis.length)];
+
+
   return (
     <div className="container py-16 flex justify-center flex-col">
       {text &&
@@ -37,8 +42,9 @@ export default function RandomTopicButton(){
       <div className="flex justify-center">
         <button type="button"
                 disabled={isLoading}
-                onClick={handleClick} className="py-2.5 px-10 me-2 mb-2 font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
-          {isLoading ? '読み込み中...' : '話題を引く 👻'}
+                onClick={handleClick}
+                className=" text-4xl py-2.5 px-32 me-2 mb-2 font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
+          {isLoading ? '読み込み中...' : `話題を引く ${getRandomEmoji()}`}
         </button>
       </div>
     </div>
