@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import RandomTopicButton from './components/RandomTopicButton';
+import TopicList from './components/TopicList';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
@@ -9,6 +10,7 @@ root.render(
   <React.StrictMode>
     <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-50">
       <RandomTopicButton />
+      <TopicList />
     </div>
   </React.StrictMode>
 );
