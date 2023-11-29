@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-const JapaneseClock = () => {
-    const weekday = ['日', '月', '火', '水', '木', '金', '土'];
+const weekday = ['日', '月', '火', '水', '木', '金', '土'];
 
+const JapaneseClock = () => {
     const [date, setDate] = useState<String>('');
     const [time, setTime] = useState<String>('');
 
@@ -14,11 +14,12 @@ const JapaneseClock = () => {
             let month = d.getMonth() + 1;
             let day = d.getDate();
             let dayofweek = d.getDay();
-            setDate(year + '年' + month + '月' + day + '日' + '(' + weekday[dayofweek] + ')');
+
+            setDate(`${year}年${month}月${day}日(${weekday[dayofweek]})`);
 
             let hour = d.getHours().toString().padStart(2, '0');
             let minute = d.getMinutes().toString().padStart(2, '0');
-            setTime(hour + ':' + minute);
+            setTime(`${hour}:${minute}`);
         };
 
         // コンポーネントマウント時に一度実行
