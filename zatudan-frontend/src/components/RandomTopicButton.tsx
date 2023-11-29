@@ -3,15 +3,18 @@ import React, { useState } from "react";
 export default function RandomTopicButton(){
   const [text, setText] = useState(""); // 新しいstateを追加
   const [isLoading, setIsLoading] = useState(false); // ローディング状態のstate
+  const [animate, setAnimate] = useState(false); // アニメーション状態を追加
 
   const handleClick = async () => {
     setIsLoading(true);
+    setAnimate(false); // アニメーション状態をリセット
     try{
       const apiUrl = process.env.REACT_APP_CF_BACKEND_API_URL;
       const url = `${apiUrl}/api/topics/random`;
       const response = await fetch(url);
       const data = await response.json();
       setText(data[0].body);
+      setAnimate(true); // テキストがセットされたらアニメーション状態をtrueに
     } catch (error) {
       if (error instanceof Error) {
         alert('エラーが発生しました: ' + error.message);
@@ -26,7 +29,7 @@ export default function RandomTopicButton(){
   return (
     <div className="container py-16 flex justify-center flex-col">
       {text &&
-        <div className="w-full px-4 my-10 py-10">
+        <div className={`w-full px-4 my-10 py-10 ${animate ? 'animate-scale-in-center' : ''}`}>
           <div className="text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 text-9xl">{text}</div>
         </div>
       }
