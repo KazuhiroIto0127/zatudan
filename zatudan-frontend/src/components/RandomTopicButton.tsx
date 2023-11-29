@@ -29,7 +29,7 @@ export default function RandomTopicButton(){
         </button>
       </div>
 
-      <div className="w-full max-w-3xl px-4">
+      <div className="w-full px-4">
         {text && <div className="text-center text-gray-700 text-9xl">{text}</div>}
       </div>
     </div>
